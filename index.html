@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReSell - Buy and Sell</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>ReSell</h1>
+    <p>Buy & Sell Used Products</p>
+</header>
+
+<nav>
+    <button onclick="showProducts()">Home</button>
+    <button onclick="showSellPage()">Sell Product</button>
+</nav>
+
+<!-- Available Products -->
+<section id="products-page">
+    <h2>Available Products</h2>
+
+    <input type="text" id="search" placeholder="Search products...">
+
+    <div id="product-list" class="product-list"></div>
+</section>
+
+<!-- Sell Product Form -->
+<section id="sell-page" hidden>
+    <h2>Sell Your Product</h2>
+
+    <form id="sell-form">
+        <input type="url" id="image" placeholder="Product Image URL (optional)">
+
+        <input type="text" id="name" placeholder="Product Name" required>
+
+        <input type="number" id="price" placeholder="Price in ₹"
+               min="1" required>
+
+        <select id="category" required>
+            <option value="Electronics">Electronics</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Books">Books</option>
+            <option value="Clothing">Clothing</option>
+        </select>
+
+        <textarea id="description"
+                  placeholder="Product Description" required></textarea>
+
+        <input type="tel" id="contact"
+               placeholder="10-digit Contact Number"
+               pattern="[0-9]{10}" maxlength="10" required>
+
+        <button type="submit">Add Product</button>
+        <button type="button" onclick="showProducts()">Cancel</button>
+    </form>
+
+    <p id="message"></p>
+</section>
+
+<footer>
+    <p>ReSell | Buy Smart, Sell Easy</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
